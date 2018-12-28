@@ -12,7 +12,7 @@ Description=Edgeware Node daemon
 [Service]
 Type=exec
 WorkingDirectory=/root/edgeware-node
-ExecStart=/bin/bash -c "/root/.cargo/bin/cargo run -- --ch$
+ExecStart=/bin/bash -c "/root/.cargo/bin/cargo run -- --chain=edgeware --key <key> --name <name>"
 [Install]
 WantedBy=multi-user.target
 ```
