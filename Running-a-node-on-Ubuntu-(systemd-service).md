@@ -27,3 +27,6 @@ To start the service on system startup:
 ```
 systemctl enable edgeware
 ```
+
+Check to see that your node is running:
+https://telemetry.polkadot.io/#/Edgeware
