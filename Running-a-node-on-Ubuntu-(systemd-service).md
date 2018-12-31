@@ -6,6 +6,8 @@ systemctl edit --force --full edgeware.service
 - --force causes a new service to be created
 - --full ensures the service is created as a full unit file, and not a snippet
 
+Or edit the config file directly: `nano /etc/systemd/system/edgeware.service`
+
 ```
 [Unit]
 Description=Edgeware Node daemon
