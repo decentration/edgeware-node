@@ -1,4 +1,3 @@
-# edgeware-node
 
 ### About
 A Parity Substrate node implementing [Edgeware](https://edgewa.re).
