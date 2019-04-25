@@ -58,7 +58,7 @@ If you use the `--key` flag, ensure that either it is a 32-byte hex string or pr
 
 To ensure you followed the steps correctly, check https://telemetry.polkadot.io/#/Edgeware%20Testnet%20V0.2.0. If done correctly, you should see your node with the inserted name.
 
-## Implemented Modules
+## Implemented [Modules](https://github.com/hicommonwealth/edgeware-node/wiki/Modules)
 
 ### Edge
 
@@ -95,7 +95,7 @@ To run a chain locally for development purposes: `./target/release/edgeware --ch
 
 To force your local to create new blocks, even if offline, add the `--force-authoring` flag.
 
-### Adding A Module
+### Adding A [Module](https://github.com/hicommonwealth/edgeware-node/wiki/Modules)
 
 1. Add its github repo to:
   - [Cargo.toml](Cargo.toml)
