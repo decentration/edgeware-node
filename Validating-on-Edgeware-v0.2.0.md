@@ -16,21 +16,21 @@ For each step we will post the CLI command that you will need to use with the [e
 ### 1. Bonding
 You will need to `bond` EDG tokens from your `stash` account to your `controller` account.
 ```
-/bin/edge -r edgeware -s <MNEMONIC/SEED> staking bond <CONTROLLER_ADDRESS> <BOND> <staked/stash/controller>
+edge -r edgeware -s <MNEMONIC/SEED> staking bond <CONTROLLER_ADDRESS> <BOND> <staked/stash/controller>
 ```
 For example, if my stash account uses the template: `<MNEMONIC>//stash` and I want to have staking rewards issued back to the `stash` account.
 ```
-/bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//stash staking bond 0x986e9ef151fb823c56c03edffc94e9c17b7f724bc104bf53332b54c1c5600171 500 stash
+edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//stash staking bond 0x986e9ef151fb823c56c03edffc94e9c17b7f724bc104bf53332b54c1c5600171 500 stash
 ```
 
 ### 2. Set session key
 You will need to link your session public key to your validator account. The chain is `stash->controller->session`. When you link any account using the CLI, ensure you only pass in the public key NOT the private key.
 ```
-./bin/edge -r edgeware -s <MNEMONIC/SEED> session setKey <SESSION_KEY>
+edge -r edgeware -s <MNEMONIC/SEED> session setKey <SESSION_KEY>
 ```
 For example
 ```
-./bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//stash session setKey 0xa29aed52530899b4fbc14772cfb9b06284509b8733bfa8d8bf3e09db4a108bb2
+edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//stash session setKey 0xa29aed52530899b4fbc14772cfb9b06284509b8733bfa8d8bf3e09db4a108bb2
 ```
 
 ### 3. Set validating preferences
@@ -38,10 +38,10 @@ You will now need to set your validator preferences using your `controller` acco
 - UnstakeThreshold - how often you want to be reported offline (and slashed) before being removed from the validator set.
 - ValidatorPayment - the amount of the reward your validator will keep with the rest going to the nominators.
 ```
-/bin/edge -r edgeware -s <MNEMONIC>//controller staking validate <UNSTAKE_THRESHOLD> <VALIDATOR_PAYMENT>
+edge -r edgeware -s <MNEMONIC>//controller staking validate <UNSTAKE_THRESHOLD> <VALIDATOR_PAYMENT>
 ```
 ```
-/bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//controller staking validate 3 0
+edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//controller staking validate 3 0
 ```
 
 ### Finished!
