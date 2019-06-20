@@ -1,6 +1,6 @@
 # Validating on Edgeware Testnet v0.2.0
 
-Welcome to the first official, in-depth Edgeware guide to validating. We're happy that you're interested in validating on our testnet and we'll do our best to provide in-depth documentation on the process below. As always, reach out on Discord or Telegram if you have questions about the project.
+Welcome to the first official, in-depth Edgeware guide to validating. We're happy that you're interested in validating on our testnet and we'll do our best to provide in-depth documentation on the process below. As always, reach out on [Discord](https://discord.gg/CJRfb3) or [Telegram](https://t.me/heyedgeware) if you have questions about the project.
 
 ## Setup
 First ensure you have `yarn` or `npm` installed and have downloaded our [edgeware-cli](https://github.com/hicommonwealth/edgeware-cli). You can do this using
@@ -8,8 +8,8 @@ First ensure you have `yarn` or `npm` installed and have downloaded our [edgewar
 
 ## Requirements
 1. You will need 3 keypairs: a `stash` (ed25519 or sr25519), `controller` (ed25519 or sr25519), and `session` (only ed25519) account. You can generate these using the `subkey` utility. We will be using derived keys in the examples, if you do not use derived keys, simply input the seed/mnemonic needed to sign from these accounts.
-2. You will need at least the existential balance in both the `stash` and `controller` accounts.
-3. You will need a live, fully-synced Edgeware testnet node running with the `--validator` and `--key <SESSION_KEY>.
+2. You will need at least the existential balance (INSERT VALUE?) in both the `stash` and `controller` accounts.
+3. You will need a live, fully-synced Edgeware testnet node running with the `--validator` and `--key <SESSION_KEY>. (Link to node launch docs?)
 
 ## Onboarding process
 For each step we will post the CLI command that you will need to use with the [edgeware-cli](https://github.com/hicommonwealth/edgeware-cli).
