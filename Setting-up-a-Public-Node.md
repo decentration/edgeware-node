@@ -12,11 +12,13 @@ it stalls or loses connectivity. Those instructions will be added later.)
 ## 0. Provisioning a server
 
 Provision an appropriately sized server from one of the recommended VPS
-providers. We assume you are using Ubuntu 18.04 x64; other versions or
-operating systems will require adjustments to these instructions.
+providers.
 
-Set up DNS pointing to the server, from e.g. `testnet1.edgewa.re`. You
-can do this later but it's recommended to do it now.
+We assume you are using Ubuntu 18.04 x64; other versions or operating
+systems will require adjustments to these instructions.
+
+Set up DNS pointing to the server, from e.g. `testnet1.edgewa.re`. It
+is strongly recommended that you do this now.
 
 SSH into the server.
 
@@ -46,7 +48,7 @@ cd edgeware-node
 ./setup.sh
 ```
 
-Then, set up the node as a system service. Navigate into the root directory
+Set up the node as a system service. To do this, navigate into the root directory
 of the `edgeware-node` repo and execute the following to create the service
 configuration file:
 
@@ -63,10 +65,12 @@ configuration file:
 } > /etc/systemd/system/edgeware.service
 ```
 
-**Note: This will create an Edgeware server that accepts all incoming connections.**
+**Note: This will create an Edgeware server that accepts all incoming
+connections. This is risky and insecure -- most users should remove the
+`rpc-cors` flag and install a firewall.**
 
-Double check that it has been written to `/etc/systemd/system/edgeware.service`
-correctly. If so, 'enable' the service (so it runs on startup) and then try to
+Double check that the config has been written to `/etc/systemd/system/edgeware.service`
+correctly. If so, enable the service so it runs on startup, and then try to
 start it now:
 
 ```
@@ -89,7 +93,7 @@ journalctl -u edgeware.service
 
 ## 2. Configuring an SSL certificate
 
-Install Certbot dependencies:
+We will use Certbot to talk to Let's Encrypt. Install Certbot dependencies:
 
 ```
 apt -y install software-properties-common
@@ -104,19 +108,19 @@ Install Certbot:
 apt -y install certbot python-certbot-nginx
 ```
 
-Use it to access LetsEncrypt:
+It will guide you through getting a certificate from Let's Encrypt:
 
 ```
 certbot --standalone
 ```
 
 If you already have a web server running (e.g. nginx, Apache, etc.)
-you will need to stop it, by running e.g. `service nginx stop`.
-Certbot will ask you some questions, start its own web server, and
-talk to Let's Encrypt to verify that you are really the owner of this
-domain to issue you a certificate.
+you will need to stop it, by running e.g. `service nginx stop`, for
+this to work.
 
-In the end, you should see output that looks like this:
+Certbot will ask you some questions, start its own web server, and
+talk to Let's Encrypt to issue a certificate. In the end, you should
+see output that looks like this:
 
 ```
 root:~/edgeware-node# certbot certonly --standalone
@@ -157,9 +161,7 @@ export name=testnet1.edgewa.re
 ```
 
 Set up an nginx configuration. This will inject the public
-address you have just defined. Make sure that the paths of
-`ssl_certificate` and `ssl_certificate_key` match what
-Let's Encrypt produced earlier:
+address you have just defined.
 
 ```
 {
@@ -200,6 +202,8 @@ Let's Encrypt produced earlier:
 } > /etc/nginx/nginx.conf
 ```
 
+Make sure that the paths of `ssl_certificate` and
+`ssl_certificate_key` match what Let's Encrypt produced earlier.
 Check that the configuration file has been created correctly.
 
 ```
@@ -219,7 +223,7 @@ Start the server:
 service nginx restart
 ```
 
-You can try to connect to your new node from
+You can now try to connect to your new node from
 [polkadot.js/apps](https://polkadot.js.org/apps/#/settings),
 or by making a curl request that emulates opening a secure
 WebSockets connection:
@@ -227,7 +231,4 @@ WebSockets connection:
 ```
 curl --include --no-buffer --header "Connection: Upgrade" --header "Upgrade: websocket" --header "Host: $name:80" --header "Origin: http://$name:80" --header "Sec-WebSocket-Key: SGVsbG8sIHdvcmxkIQ==" --header "Sec-WebSocket-Version: 13" http://$name:9944/
 ```
-
-
-
 
