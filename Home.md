@@ -1,1 +1,2 @@
-Welcome to the edgeware-node wiki!
+This resource provides documentation for the Edgeware node and network software.
+
