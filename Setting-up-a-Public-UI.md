@@ -1,4 +1,4 @@
-### 0. Provisioning a server
+## 0. Provisioning a server
 
 Provision an appropriately sized server from one of the recommended VPS providers.
 
@@ -8,7 +8,7 @@ Set up DNS pointing to the server, from e.g. apps.edgewa.re. It is strongly reco
 
 SSH into the server.
 
-### 1. Installing `apps` and setting it up as a system service
+## 1. Installing `apps` and setting it up as a system service
 
 Clone the `apps` repo:
 
@@ -53,7 +53,7 @@ systemctl status apps
 curl localhost:3000
 ```
 
-### 2. Configuring an SSL certificate
+## 2. Configuring an SSL certificate
 
 To make `apps` available in a secure manner, we will use Let's Encrypt
 and certbot to make the server available via SSL.
@@ -78,7 +78,7 @@ Certbot will ask you some questions, start its own web
 server, and talk to Let's Encrypt to issue a certificate.
 It will also configure nginx.
 
-### 3. Update the nginx configuration
+## 3. Updating the nginx configuration
 
 Ensure nginx proxies from port 443 to port 3000:
 
