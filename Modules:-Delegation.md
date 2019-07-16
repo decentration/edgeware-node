@@ -1,3 +1,5 @@
+_As of testnet V0.4.0, this page is out of date. Please refer to the code for reference._
+
 # edge_delegation
 This module contains the basic delegation interface that should be consumed by other modules. Accounts can delegate their unit voting preference to another account or delegator. When an election/ballot is terminating in another module of Edgeware, we can receive a tally of the most up to date delegators that are sinks along any account's delegation path. For each account, the up to date delegator indicates where to allocate an account's votes.
 
