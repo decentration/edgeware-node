@@ -1,3 +1,5 @@
+_As of testnet V0.4.0, this page is out of date. Please refer to the code for reference._
+
 Edgeware currently has the following modules:
 
 * [Identity](https://github.com/hicommonwealth/edgeware-node/wiki/Identity-Module) ([Repo](https://github.com/hicommonwealth/edgeware-node/tree/master/modules/edge-identity))
