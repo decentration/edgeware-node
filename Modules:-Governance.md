@@ -1,3 +1,5 @@
+_As of testnet V0.4.0, this page is out of date. Please refer to the code for reference._
+
 # edge_governance
 This module contains the logic that powers Edgeware's governance UI. It is presented as a broader governance module that forms something akin to a forum for governance proposals. Users can submit proposals, vote on proposals, and track progress of proposals through Edgeware's governance process.
 
