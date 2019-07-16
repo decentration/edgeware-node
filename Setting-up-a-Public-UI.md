@@ -132,3 +132,5 @@ systemctl daemon-reload
 systemctl start nginx
 systemctl enable nginx
 ```
+
+Check your server is running from your local browser.
