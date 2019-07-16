@@ -1,3 +1,5 @@
+_As of testnet V0.4.0, this page is out of date. Please refer to the code for reference._
+
 # edge_voting
 This module contains logic for voting. It consumes the delegation module to tally votes and should similarly be consumed by all other modules that want to handle voting. It currently supports binary and multi-option elections with optional commit/reveal schemes using the Blake2Hash function as the hashing algorithm.
 
