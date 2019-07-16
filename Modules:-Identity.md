@@ -1,3 +1,5 @@
+_As of testnet V0.4.0, this page is out of date. Please refer to the code for reference._
+
 # edge_identity
 The identity module currently handles the registration, attestation, and verification of external identities on Edgeware. The types of identities one may be interested in registering through this module include other blockchain addresses or public keys, Github usernames, email addresses, and even phone numbers. The goal of this module is to be as extensible to external identities in the real or blockchain world to interface with Edgeware.
 
