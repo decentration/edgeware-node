@@ -76,47 +76,59 @@ certbot --nginx
 
 Certbot will ask you some questions, start its own web
 server, and talk to Let's Encrypt to issue a certificate.
-It will also configure nginx.
+
+When it asks you whether to redirect traffic from port
+80 to SSL, you should respond **yes**.
 
 ## 3. Updating the nginx configuration
 
-Ensure nginx proxies from port 443 to port 3000:
+Set the intended public address of the server, e.g. apps.edgewa.re, as an environment variable:
 
 ```
-nano /etc/nginx/nginx.conf
+export name=apps.edgewa.re
 ```
 
-Replace the configuration file with the following:
+Set up an nginx configuration. This will inject the public address you have just defined.
 
 ```
-user       www-data;  ## Default: nobody
-worker_processes  5;  ## Default: 1
-error_log  /var/log/nginx/error.log;
-pid        /var/run/nginx.pid;
-worker_rlimit_nofile 8192;
+{
+    echo 'user       www-data;  ## Default: nobody'
+    echo 'worker_processes  5;  ## Default: 1'
+    echo 'error_log  /var/log/nginx/error.log;'
+    echo 'pid        /var/run/nginx.pid;'
+    echo 'worker_rlimit_nofile 8192;'
+    echo ''
+    echo 'events {'
+    echo '  worker_connections  4096;  ## Default: 1024'
+    echo '}'
+    echo ''
+    echo 'http {'
+    echo '    map $http_upgrade $connection_upgrade {'
+    echo '      default upgrade;'
+    echo "      \'\' close;"
+    echo '    }'
+    echo '    server {'
+    echo '      listen       443 ssl;'
+    echo '      server_name  '$name';'
+    echo ''
+    echo '      ssl_certificate /etc/letsencrypt/live/'$name'/cert.pem;'
+    echo '      ssl_certificate_key /etc/letsencrypt/live/'$name'/privkey.pem;'
+    echo '      ssl_session_timeout 5m;'
+    echo '      ssl_protocols  SSLv2 SSLv3 TLSv1;'
+    echo '      ssl_ciphers  HIGH:!aNULL:!MD5;'
+    echo '      ssl_prefer_server_ciphers   on;'
+    echo ''
+    echo '      location / {'
+    echo '          proxy_pass http://127.0.0.1:3000 ;'
+    echo '      }'
+    echo '    }'
+    echo '}'
+} > /etc/nginx/nginx.conf
+```
 
-events {
-  worker_connections  4096;  ## Default: 1024
-}
-
-http {
-    map $http_upgrade $connection_upgrade {
-    	default upgrade;
-    	'' close;
-    }
-    server {
-	listen       443 ssl;
-	server_name  apps.edgewa.re;
-        ssl_certificate /etc/letsencrypt/live/testnode.edgewa.re/fullchain.pem; # managed by Certbot
-        ssl_certificate_key /etc/letsencrypt/live/testnode.edgewa.re/privkey.pem; # managed by Certbot
-	ssl_session_timeout 5m;
-	ssl_protocols  SSLv2 SSLv3 TLSv1;
-	ssl_ciphers  HIGH:!aNULL:!MD5;
-	ssl_prefer_server_ciphers   on;
-
-        location / {
-            proxy_pass http://127.0.0.1:3000;
-        }
-    }
-}
+Start nginx, and ensure it is run on system startup:
+```
+systemctl daemon-reload
+systemctl start nginx
+systemctl enable nginx
 ```
