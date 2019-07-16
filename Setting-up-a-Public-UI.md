@@ -1,3 +1,7 @@
+This page explains how to set up a [polkadot-js/apps UI](https://polkadot.js.org/apps/)
+for Edgeware, using the Edgeware branch of `apps`. The main difference is that the Edgeware
+branch supports the types defined in Edgeware's voting and governance modules.
+
 ## 0. Provisioning a server
 
 Provision an appropriately sized server from one of the recommended VPS providers.
