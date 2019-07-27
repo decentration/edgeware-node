@@ -6,7 +6,7 @@ branch supports the types defined in Edgeware's voting and governance modules.
 
 Provision an appropriately sized server from one of the recommended VPS providers.
 
-We recommend 4GB of RAM and assume you are using Ubuntu 18.04 x64; other versions or operating systems will require adjustments to these instructions.
+We assume you are using Ubuntu 18.04 x64; other versions or operating systems will require adjustments to these instructions.
 
 Set up DNS pointing to the server, from e.g. apps.edgewa.re. It is strongly recommended that you do this now.
 
