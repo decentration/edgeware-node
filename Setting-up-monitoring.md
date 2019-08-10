@@ -1,3 +1,6 @@
+This tutorial explains how to set up monit and mmonit, which are respectively
+a process monitoring tool and a dashboard for managing a fleet of monit nodes.
+
 ## Setting up an `mmonit` dashboard server
 
 ```
@@ -31,15 +34,20 @@ username and passwords.
 
 ## Adding individual nodes
 
+Before proceeding, set an appropriate hostname for the node, e.g.
+
+```
+hostnamectl set-hostname validator1
+```
+
 Install monit.
 
 ```
 apt install -y monit
 ```
 
-
-Set up a Monit config to check Edgeware service at 10-second intervals,
-and restart if CPU > 80% for five checks, and post events to mmonit.
+Set up a Monit config to check the Edgeware service at 10-second intervals,
+restart if CPU > 80% for five checks, and post events to mmonit.
 
 You should first provide a username and password. They should be the same
 as you have set for mmonit above, and they will be used BOTH to push data
