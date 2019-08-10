@@ -91,3 +91,5 @@ export TARGET=[domain]
 monit reload
 monit validate
 ```
+
+Note that connections on port 2812 are restricted to localhost.
