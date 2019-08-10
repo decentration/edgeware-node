@@ -1,7 +1,13 @@
 This tutorial explains how to set up monit and mmonit, which are respectively
 a process monitoring tool and a dashboard for managing a fleet of monit nodes.
 
+The tutorial assumes you are running Ubuntu 18.04
+
 ## Setting up an `mmonit` dashboard server
+
+For the monitoring server, a small server should be enough (e.g. 1GB memory).
+The default setup will use SQLite as a database. Beware that if you remove
+the monit directory, all logged events will be lost!
 
 ```
 apt install -y monit
@@ -25,12 +31,15 @@ mmonit reload
 mmonit validate
 ```
 
-To start the mmonit dashboard, use `mmonit/bin/mmonit`.
+To start the mmonit dashboard manually, you can use the command `mmonit/bin/mmonit`.
 To stop, use `mmonit/bin/mmonit stop`.
 
-Go to the node in your browser, e.g `http://monitor.edgewa.re:8080/`.
-Log in with username `admin` and password `swordfish`. Change the default
-username and passwords.
+Now, go to the node in your browser, e.g `http://monitor.edgewa.re:8080/`.
+Log in with username `admin` and password `swordfish` and change the default
+username and password.
+
+You should end up with two users; admin is what you'll use to log in, and the
+other user is what you'll provide to nodes that push data to the monitoring server.
 
 ## Adding individual nodes
 
@@ -56,8 +65,8 @@ directly.
 
 ```
 export USER=edgeware
-export PASSWORD=f8eec78fe63efae6d8b3ba304cb8d89b
-export TARGET=monitor.edgewa.re
+export PASSWORD=[password]
+export TARGET=[domain]
 {
     echo 'set daemon 10'
     echo 'set log /var/log/monit.log'
