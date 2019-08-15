@@ -55,6 +55,19 @@ Install monit.
 apt install -y monit
 ```
 
+Set up a Slack webhook (optional):
+
+```
+export WEBHOOK=[slack webhook url]
+{
+    echo 'URL="'$WEBHOOK'"'
+    echo "PAYLOAD='{\"text\": \"`hostname` restarted edgeware.service\"}'"
+    echo 'curl -s -X POST --data-urlencode "payload=$PAYLOAD" $URL'
+} > /root/slack_notify.sh
+
+chmod 755 /root/slack_notify.sh
+```
+
 Set up a Monit config to check the Edgeware service at 10-second intervals,
 restart if CPU > 80% for five checks, and post events to mmonit.
 
@@ -79,8 +92,10 @@ export TARGET=[domain]
     echo 'check process edgeware matching target/release/edgeware'
     echo '  start program = "/bin/systemctl restart edgeware"'
     echo '  stop program = "/bin/systemctl kill edgeware"'
-    echo '  if cpu > 80% for 5 cycles then restart'
+    echo '  if cpu > 80% for 5 cycles then stop'
     echo '  if cpu > 80% for 5 cycles then alert'
+    echo '  if does not exist for 2 cycles then start'
+    echo '  if does not exist for 2 cycles then exec "/bin/bash -c /root/slack_notify.sh"'
     echo ''
     echo 'set mmonit http://'$USER:$PASSWORD@$TARGET':8080/collector'
     echo 'set httpd port 2812 and use address localhost'
