@@ -111,7 +111,7 @@ apt -y install certbot python-certbot-nginx
 It will guide you through getting a certificate from Let's Encrypt:
 
 ```
-certbot --standalone
+certbot certonly --standalone
 ```
 
 If you already have a web server running (e.g. nginx, Apache, etc.)
