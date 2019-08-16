@@ -69,7 +69,7 @@ chmod 755 /root/slack_notify.sh
 ```
 
 Set up a Monit config to check the Edgeware service at 10-second intervals,
-restart if CPU > 80% for five checks, and post events to mmonit.
+restart if CPU > 80% for ten checks (~100sec), and post events to mmonit.
 
 You should first provide a username and password. They should be the same
 as you have set for mmonit above, and they will be used BOTH to push data
@@ -92,8 +92,8 @@ export TARGET=[domain]
     echo 'check process edgeware matching target/release/edgeware'
     echo '  start program = "/bin/systemctl restart edgeware"'
     echo '  stop program = "/bin/systemctl kill edgeware"'
-    echo '  if cpu > 80% for 5 cycles then stop'
-    echo '  if cpu > 80% for 5 cycles then alert'
+    echo '  if cpu > 80% for 10 cycles then stop'
+    echo '  if cpu > 80% for 10 cycles then alert'
     echo '  if does not exist for 2 cycles then start'
     echo '  if does not exist for 2 cycles then exec "/bin/bash -c /root/slack_notify.sh"'
     echo ''
