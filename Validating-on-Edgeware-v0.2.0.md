@@ -1,3 +1,5 @@
+Note: This guide is out of date. 
+
 # Validating on Edgeware Testnet v0.2.0
 
 Welcome to the first official, in-depth Edgeware guide to validating. We're happy that you're interested in validating on our testnet and we'll do our best to provide in-depth documentation on the process below. As always, reach out on [Discord](https://discord.gg/CJRfb3) or [Telegram](https://t.me/heyedgeware) if you have questions about the project.
