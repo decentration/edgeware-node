@@ -23,8 +23,6 @@ This document contains all the information one should need to start validating o
 From this point on, we will assume you are familiar with using `subkey`, if that is not the case, you can read about the `subkey` commands [here](https://github.com/paritytech/substrate/tree/master/subkey).
 
 ## Onboarding
----
-
 1. First, create the ***stash*** and ***controller*** keypairs using `subkey`. You can also **optionally** **create your 3 session keys. Ensure all 3 session keys are ED25519 keypairs, using `-e` flag with subkey.
 2. Next, you will need to bond from your ***stash*** keypair to your ***controller*** keypair. Using the CLI, you will run:
 `/bin/edge -r edgeware -s <STASH_SEED> staking bond <CONTROLLER_B58_ADDRESS> <AMOUNT> <REWARD_DESTINATION>`
