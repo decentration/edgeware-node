@@ -10,7 +10,7 @@ This document contains all the information one should need to start validating o
 
 ## Requirements
 1. You will need 5 keypairs: a `stash` (ed25519 or sr25519), `controller` (ed25519 or sr25519), and 3 `session` (only ed25519) keypairs. You can generate these using the `subkey` utility. We will be using derived keys in the examples, if you do not use derived keys, simply input the seed/mnemonic needed to sign from these accounts.
-2. You will need at least the existential balance (INSERT VALUE?) in both the `stash` and `controller` accounts plus the balances needed to send transactions from these accounts.
+2. You will need at least the existential balance (1,000,000,000,000,000 token units i.e 0.001 EDG) in both the `stash` and `controller` accounts plus the balances needed to send transactions from these accounts.
 3. You will need a live, fully-synced Edgeware testnet node running with the `--validator` flag that has set one's session keys, either before or after you complete the onboarding process.
 
 ## Pre-requisites
@@ -25,20 +25,26 @@ From this point on, we will assume you are familiar with using `subkey`, if that
 ## Onboarding
 1. First, create the ***stash*** and ***controller*** keypairs using `subkey`. You can also **optionally** **create your 3 session keys. Ensure all 3 session keys are ED25519 keypairs, using `-e` flag with subkey.
 2. Next, you will need to bond from your ***stash*** keypair to your ***controller*** keypair. Using the CLI, you will run:
-`/bin/edge -r edgeware -s <STASH_SEED> staking bond <CONTROLLER_B58_ADDRESS> <AMOUNT> <REWARD_DESTINATION>`
-    - The ***stash*** seed should be a mnemonic + derivation path for your ***stash*** keypair
-    - The ***controller*** address should be a Base58 encoded public key (starts with a 5)
-    - The bond ***amount*** should be an integer balance
-    - The ***reward destination*** is where rewards will go; the options are `stash`, `controller`, and `staked` (where staked adds rewards to the amount staked)
+```
+/bin/edge -r edgeware -s <STASH_SEED> staking bond <CONTROLLER_B58_ADDRESS> <AMOUNT> <REWARD_DESTINATION>
+```
+- The ***stash*** seed should be a mnemonic + derivation path for your ***stash*** keypair
+- The ***controller*** address should be a Base58 encoded public key (starts with a 5)
+- The bond ***amount*** should be an integer balance
+- The ***reward destination*** is where rewards will go; the options are `stash`, `controller`, and `staked` (where staked adds rewards to the amount staked)
 3. Next, you will need to set your validator preferences from your ***controller*** account. Using the CLI, you will run:
-`/bin/edge -r edgeware -s <CONTROLLER_SEED> staking validate <UNSTAKE_THRESHOLD> <VALIDATOR_PAYMENT>`
-    - The ***controller*** seed should be a mnemonic + derivation path for your ***controller*** keypair
-    - The ***unstake threshold*** is the number of times your node is offline before dropping out
-    - The ***validator payment*** is the reward the validator takes up front as an integer balance
+```
+/bin/edge -r edgeware -s <CONTROLLER_SEED> staking validate <UNSTAKE_THRESHOLD> <VALIDATOR_PAYMENT>
+```
+- The ***controller*** seed should be a mnemonic + derivation path for your ***controller*** keypair
+- The ***unstake threshold*** is the number of times your node is offline before dropping out
+- The ***validator payment*** is the reward the validator takes up front as an integer balance
 4. Next, you will need to set your ***session*** keys from your ***controller*** keypair. Using the CLI, you will run:
-`/bin/edge -r edgeware -s <CONTROLLER_SEED> session setKeys <SESSION_PUBLIC_KEY1>,<SESSION_PUBLIC_KEY2>,<SESSION_PUBLIC_KEY3>`
-    - The ***controller*** seed should be a mnemonic + derivation path for your ***controller*** keypair
-    - The ***session*** public keys should be comma separated, and hex-encoded public keys
+```
+/bin/edge -r edgeware -s <CONTROLLER_SEED> session setKeys <SESSION_PUBLIC_KEY1>,<SESSION_PUBLIC_KEY2>,<SESSION_PUBLIC_KEY3>
+```
+- The ***controller*** seed should be a mnemonic + derivation path for your ***controller*** keypair
+- The ***session*** public keys should be comma separated, and hex-encoded public keys
 
 
 #### Examples of all the commands are below:
