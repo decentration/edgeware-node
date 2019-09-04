@@ -40,9 +40,9 @@ From this point on, we will assume you are familiar with using `subkey`, if that
     - The ***controller*** seed should be a mnemonic + derivation path for your ***controller*** keypair
     - The ***session*** public keys should be comma separated, and hex-encoded public keys
 
---
 
-Examples of all the commands are below:
+#### Examples of all the commands are below:
+In the following, we have downloaded and compiled `edgeware-cli` from source to yield a `/bin/edge` binary. You can use `tsc` to do so if you compile from source.
 ```
 /bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//stash staking bond 0x986e9ef151fb823c56c03edffc94e9c17b7f724bc104bf53332b54c1c5600171 500 stash
 /bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//controller staking validate 3 0
