@@ -14,7 +14,7 @@ This document contains all the information one should need to start validating o
 3. You will need a live, fully-synced Edgeware testnet node running with the `--validator` flag that has set one's session keys, either before or after you complete the onboarding process.
 
 ## Pre-requisites
-- First follow the guide in the `[README.md](http://readme.md)` for installing and running the `edgeware-node`.
+- First follow the guide in the [README.md](https://github.com/hicommonwealth/edgeware-node/blob/master/README.md) for installing and running the `edgeware-node`.
 - Download from source or from the `npm` registry the `edgeware-cli` located [here](https://github.com/hicommonwealth/edgeware-cli/).
 - Install `subkey` as well if you do need to generate new keypairs:
 
@@ -40,7 +40,7 @@ From this point on, we will assume you are familiar with using `subkey`, if that
 4. Next, you will need to set your ***session*** keys from your ***controller*** keypair. Using the CLI, you will run:
 `/bin/edge -r edgeware -s <CONTROLLER_SEED> session setKeys <SESSION_PUBLIC_KEY1>,<SESSION_PUBLIC_KEY2>,<SESSION_PUBLIC_KEY3>`
     - The ***controller*** seed should be a mnemonic + derivation path for your ***controller*** keypair
-    - The ***session*** public keys should be comma separated, and hex-encoded public keys.
+    - The ***session*** public keys should be comma separated, and hex-encoded public keys
 
 --
 
