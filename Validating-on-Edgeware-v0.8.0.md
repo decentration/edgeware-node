@@ -14,6 +14,7 @@ This document contains all the information one should need to start validating o
 ## Pre-requisites
 - First follow the guide in the [README.md](https://github.com/hicommonwealth/edgeware-node/blob/master/README.md) for installing and running the `edgeware-node`.
 - Download from source or from the `npm` registry the `edgeware-cli` located [here](https://github.com/hicommonwealth/edgeware-cli/).
+Note: `edgeware-cli` has several dependencies [viewable here.](https://www.npmjs.com/package/edgeware-cli) 
 - Install `subkey` as well if you do need to generate new keypairs:
 
     cargo install --force --git https://github.com/paritytech/substrate subkey
