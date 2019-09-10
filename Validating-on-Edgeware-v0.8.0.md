@@ -66,9 +66,9 @@ Now you will need to install the `edgeware-node` to start validating with the ke
 
 For example, if you were selected to participate as a validator from the Edgeware Lockdrop, you will likely want to input the keys you have generated to your node's keystore. Or if you have a generated a set of keys previously that you want to use for validating, these commands will guide you through that process.
 
-    curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_insertKey", "params":["aura", "<mnemonic>//<derivation_path>", "<public_key>"],"id":1 }' localhost:9933
-    curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_insertKey", "params":["gran", "<mnemonic>//<derivation_path>", "<public_key>"],"id":1 }' localhost:9933
-    curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_insertKey", "params":["imon", "<mnemonic>//<derivation_path>", "<public_key>"],"id":1 }' localhost:9933
+    curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_insertKey", "params":["aura", "SESSION_KEY_SEED", "<public_key>"],"id":1 }' localhost:9933
+    curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_insertKey", "params":["gran", "SESSION_KEY_SEED", "<public_key>"],"id":1 }' localhost:9933
+    curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_insertKey", "params":["imon", "SESSION_KEY_SEED", "<public_key>"],"id":1 }' localhost:9933
 
 You will need to pass in the respective public key for the `aura` and `imon` because it can work for both `SR25519` and `ED25519` keys and needs the public key to decide. ***Note: Edgeware uses ED25519 keys for Aura, Grandpa, and Im_Online***.
 
