@@ -51,7 +51,7 @@ In the following, we have downloaded and compiled `edgeware-cli` from source to 
 ```
 /bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//stash staking bond 0x986e9ef151fb823c56c03edffc94e9c17b7f724bc104bf53332b54c1c5600171 500 stash
 /bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//controller staking validate 3 0
-/bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//controller session setKey 0xa29aed52530899b4fbc14772cfb9b06284509b8733bfa8d8bf3e09db4a108bb2,0xe8987d80ee5a8a239dd33eabfee6b5bb287264f0a32ce6ef13ccfedf598b98718d8bf3e09db4a108bb2,0x6ed5ac9bf1388dd38c9e271f8e49e4691de2bf174990c7d37b637b46d5b6763b
+/bin/edge -r edgeware -s "eager exit major position method auction duck fix journey supply mad caught"//controller session setKeys 0xa29aed52530899b4fbc14772cfb9b06284509b8733bfa8d8bf3e09db4a108bb2,0xe8987d80ee5a8a239dd33eabfee6b5bb287264f0a32ce6ef13ccfedf598b98718d8bf3e09db4a108bb2,0x6ed5ac9bf1388dd38c9e271f8e49e4691de2bf174990c7d37b637b46d5b6763b
 ```
 
 
