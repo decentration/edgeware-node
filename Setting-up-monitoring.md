@@ -112,10 +112,11 @@ Note that connections on port 2812 are restricted to localhost.
 
 ## Bonus: Monitoring API connectivity
 
-It may be beneficial to have monit directly checking the health
-of the node by requesting data from it to ensure blocks are syncing,
-rather than just checking CPU usage. If your node has an open
-WebSockets API, you can use `nodeup` to do this.
+If your node has an open WebSockets API, you can add a script that
+directly checks the health of the node, and ensures blocks are syncing.
+This will catch some failure scenarios where the node appears to keep
+operating but stops recognizing new blocks. We provide `nodeup` for this
+purpose.
 
 Clone [nodeup](https://github.com/hicommonwealth/nodeup.git) into
 the `/root` directory. Follow its installation instructions:
