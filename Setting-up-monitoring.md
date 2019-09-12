@@ -109,3 +109,28 @@ monit validate
 ```
 
 Note that connections on port 2812 are restricted to localhost.
+
+## Bonus: Monitoring API connectivity
+
+Clone [nodeup](https://github.com/hicommonwealth/nodeup.git) into
+the `/root` directory. Follow its installation instructions:
+
+```
+apt install -y nodejs npm
+npm install -g yarn
+yarn
+```
+
+Add these lines to `/etc/monit/monitrc`:
+
+```
+check program nodeup with path "/root/nodeup/index.js"
+  if status > 0 for 5 cycles then exec "/bin/systemctl stop edgeware" and repeat every 10 cycles
+```
+
+Restart monit, and check that the new script is working:
+
+```
+monit reload
+monit status
+```
