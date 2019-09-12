@@ -131,7 +131,7 @@ Add these lines to `/etc/monit/monitrc`:
 
 ```
 check program nodeup with path "/root/nodeup/index.js"
-  if status > 0 for 5 cycles then exec "/bin/systemctl stop edgeware" and repeat every 10 cycles
+  if status > 0 for 10 cycles then exec "/bin/systemctl stop edgeware" and repeat every 10 cycles
 ```
 
 Restart monit, and check that the new script is working:
