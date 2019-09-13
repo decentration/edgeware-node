@@ -1,4 +1,4 @@
-Welcome to the official, in-depth Edgeware guide to validating. We're happy that you're interested in validating on our testnet and we'll do our best to provide in-depth documentation on the process below. As always, reach out on [Discord](https://discord.gg/CJRfb3) or [Telegram](https://t.me/heyedgeware) if you have questions about the project.
+Welcome to the official, in-depth Edgeware guide to validating. We're happy that you're interested in validating on Edgeware and we'll do our best to provide in-depth documentation on the process below. As always, reach out on [Discord](https://discord.gg/CJRfb3) or [Telegram](https://t.me/heyedgeware) if you have questions about the project.
 
 This document contains all the information one should need to start validating on Edgeware. We will start with how to setup one's node and proceed to how to key management and monitoring. To start, we will use the following terminology of keys for the guide:
 
@@ -9,7 +9,7 @@ This document contains all the information one should need to start validating o
 ## Requirements
 1. You will need 5 keypairs: a `stash` (ed25519 or sr25519), `controller` (ed25519 or sr25519), and 3 `session` (only ed25519) keypairs. You can generate these using the `subkey` utility. We will be using derived keys in the examples, if you do not use derived keys, simply input the seed/mnemonic needed to sign from these accounts.
 2. You will need at least the existential balance (1,000,000,000,000,000 token units i.e 0.001 EDG) in both the `stash` and `controller` accounts plus the balances needed to send transactions from these accounts.
-3. You will need a live, fully-synced Edgeware testnet node running with the `--validator` flag that has set one's session keys, either before or after you complete the onboarding process.
+3. You will need a live, fully-synced Edgeware node running with the `--validator` flag that has set one's session keys, either before or after you complete the onboarding process.
 
 ## Pre-requisites
 - First follow the guide in the [README.md](https://github.com/hicommonwealth/edgeware-node/blob/master/README.md) for installing and running the `edgeware-node`.
@@ -59,7 +59,7 @@ In the following, we have downloaded and compiled `edgeware-cli` from source to 
 
 Now you will need to install the `edgeware-node` to start validating with the keys you have generated above. If you followed the first step of the pre-requisites you should be able to build the node as is described below and in the repo.
 
-1. Once you build with `cargo build --release`, run your node with `./target/release/edgeware --chain=edgeware-testnet-v8 --validator`
+1. Once you build with `cargo build --release`, run your node with `./target/release/edgeware --chain=edgeware --validator`
 2. Now that the chain is running, you will need to pass the chain your session keys. To do so, you will need to use the following `curl` commands to send the node your keys.
 
 ## If you already have session keys:
