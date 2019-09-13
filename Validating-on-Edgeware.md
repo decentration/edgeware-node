@@ -8,7 +8,7 @@ This document contains all the information one should need to start validating o
 
 ## Requirements
 1. You will need 5 keypairs: a `stash` (ed25519 or sr25519), `controller` (ed25519 or sr25519), and 3 `session` (only ed25519) keypairs. You can generate these using the `subkey` utility. We will be using derived keys in the examples, if you do not use derived keys, simply input the seed/mnemonic needed to sign from these accounts.
-2. You will need at least the existential balance (1,000,000,000,000,000 token units i.e 0.001 EDG) in both the `stash` and `controller` accounts plus the balances needed to send transactions from these accounts.
+2. You will need at least the existential balance (1,000,000,000,000,000 token units i.e 0.0001 EDG) in both the `stash` and `controller` accounts plus the balances needed to send transactions from these accounts.
 3. You will need a live, fully-synced Edgeware node running with the `--validator` flag that has set one's session keys, either before or after you complete the onboarding process.
 
 ## Pre-requisites
