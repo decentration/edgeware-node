@@ -5,14 +5,8 @@ It roughly covers two cases:
 - Setting up a private node, e.g. if you would like to run a validator
 - Setting up a public node, e.g. if you want to run connect services or dapps to Edgeware
 
-In addition to an up-to-date version of the software, public nodes have a
-few more requirements:
-
-1. The node should run as a system service, automatically starting on boot
-2. A secure WebSockets connection, which requires a proxy (NGINX)
-3. A signed HTTPS certificate, issued by a recognized CA (Let's Encrypt)
-
-If you are running a private node, you will only need to follow **steps 0 and 1** of this guide.
+If you are running a private node, you will only need to follow
+**steps 0 and 1** of this guide.
 
 ## 0. Provisioning a server
 
@@ -245,3 +239,5 @@ Congratulations on your new node!
 Your node will automatically restart when the system reboots, but it may not
 be able to recover from other failures. To handle those, consider following
 our guide to [[Setting up monitoring]].
+
+You may also wish to proceed to [[Validating on Edgeware]].
