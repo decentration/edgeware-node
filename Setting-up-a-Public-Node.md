@@ -146,7 +146,7 @@ IMPORTANT NOTES:
    "certbot renew"
 ```
 
-## 3. Configuring a Websockets proxy
+## 3. Configuring a Websockets proxy (public nodes only)
 
 First, install nginx:
 
