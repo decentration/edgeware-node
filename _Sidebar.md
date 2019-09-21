@@ -1,6 +1,6 @@
 Quick links:
 
-#### [[Setting up a Public Node]]
+#### [[Setting up a node]]
 
 #### [[Setting up monitoring]]
 
