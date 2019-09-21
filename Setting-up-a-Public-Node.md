@@ -17,8 +17,8 @@ providers.
 We recommend 4GB of RAM and assume you are using Ubuntu 18.04 x64; other versions or operating
 systems will require adjustments to these instructions.
 
-Set up DNS pointing to the server, from e.g. `testnet1.edgewa.re`. It
-is strongly recommended that you do this now.
+Set up DNS from a domain name that you own to point to the server. We will use
+`testnet1.edgewa.re`. (You don't need to do this if you are setting up a private node.)
 
 SSH into the server.
 
@@ -66,8 +66,9 @@ configuration file:
 ```
 
 **Note: This will create an Edgeware server that accepts all incoming
-connections. This is risky and insecure -- most users should remove the
-`rpc-cors` flag and install a firewall.**
+connections. This is risky and insecure if you keep any keys on the server.
+If you would like to create a private node instead, you should remove the
+`ws-external` and `rpc-cors` flags.**
 
 Double check that the config has been written to `/etc/systemd/system/edgeware.service`
 correctly. If so, enable the service so it runs on startup, and then try to
@@ -91,7 +92,7 @@ If you need to tail the latest output, you can use:
 journalctl -u edgeware.service
 ```
 
-## 2. Configuring an SSL certificate
+## 2. Configuring an SSL certificate (public nodes only)
 
 We will use Certbot to talk to Let's Encrypt. Install Certbot dependencies:
 
