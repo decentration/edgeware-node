@@ -1,8 +1,8 @@
 A Parity Substrate node implementing [Edgeware](https://edgewa.re).
 
-### [Build and Run an Edgeware Node](https://github.com/hicommonwealth/edgeware-node/wiki/Building-and-Running-A-Node)
+### [[Setting up a public node]]
 
-### [Learn about or install Edgeware Modules](https://github.com/hicommonwealth/edgeware-node/wiki/Modules)
+### [[Setting up monitoring]]
 
-### [Develop on Edgeware](https://github.com/hicommonwealth/edgeware-node/wiki/Develop-on-a-Local-Chain)
+### [[Validating on Edgeware]]
 
