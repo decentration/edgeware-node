@@ -43,6 +43,8 @@ other user is what you'll provide to nodes that push data to the monitoring serv
 
 ## Adding individual nodes
 
+SSH into your node.
+
 Before proceeding, set an appropriate hostname for the node, e.g.
 
 ```
@@ -115,8 +117,12 @@ Note that connections on port 2812 are restricted to localhost.
 If your node has an open WebSockets API, you can add a script that
 directly checks the health of the node, and ensures blocks are syncing.
 This will catch some failure scenarios where the node appears to keep
-operating but stops recognizing new blocks. We provide `nodeup` for this
-purpose.
+operating but stops recognizing new blocks. We provide `nodeup`
+for this purpose.
+
+To accept WebSockets API connections, add `--rpc-cors="*"` to the node
+configuration. By default, this will not make the node accept connections
+from outside hosts (`--ws-external` is required for that).
 
 Clone [nodeup](https://github.com/hicommonwealth/nodeup.git) into
 the `/root` directory. Follow its installation instructions:
