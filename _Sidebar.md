@@ -5,3 +5,5 @@ Quick links:
 #### [[Setting up monitoring]]
 
 #### [[Validating on Edgeware]]
+
+#### [[Connecting to the Chain (API Endpoints)]]
