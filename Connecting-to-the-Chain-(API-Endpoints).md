@@ -11,6 +11,6 @@ Commonwealth Labs maintains several public nodes for testnet v0.8:
 
 **Syntax:**
 * wss://testnet1.edgewa.re
- or
+ or (if wss: fails)
 * ws://testnet1.edgewa.re:9944
 
