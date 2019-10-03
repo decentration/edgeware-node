@@ -234,7 +234,9 @@ curl --include --no-buffer --header "Connection: Upgrade" --header "Upgrade: web
 
 ### 4. Next steps
 
-Congratulations on your new node!
+Congratulations on your new node! Try connecting to it using [polkadot-js/apps](https://polkadot.js.org/apps/#/settings):
+
+![](https://user-images.githubusercontent.com/1273926/66156368-631b3400-e5d6-11e9-8254-33040f87ee4f.png)
 
 Your node will automatically restart when the system reboots, but it may not
 be able to recover from other failures. To handle those, consider following
