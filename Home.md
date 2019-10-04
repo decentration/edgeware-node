@@ -1,15 +1,17 @@
 A Parity Substrate node implementing [Edgeware](https://edgewa.re).
 
-## Getting started
+### [Telemetry](https://telemetry.polkadot.io/#/Edgeware Testnet)
 
-### [[Frequently used commands]]
+### [Block Explorer](https://polkascan.io/pre/edgeware-testnet/dashboard)
 
-### [[Validating on Edgeware]]
+## DevOps Guides
 
-## DevOps
+### [[Getting started]]
 
 ### [[Setting up a node]]
 
 ### [[Setting up monitoring]]
+
+### [[Validating on Edgeware]]
 
 
