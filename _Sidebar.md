@@ -6,4 +6,6 @@ Quick links:
 
 #### [[Validating on Edgeware]]
 
-#### [[Connecting to the Chain (API Endpoints)]]
+#### [[Developing on Edgeware]]
+
+#### [[Frequently used commands]]
