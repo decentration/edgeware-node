@@ -26,8 +26,9 @@ Provision an appropriately sized server from a reputable VPS provider, e.g.:
 We recommend a node with at least 2GB of RAM, and Ubuntu 18.04 x64.
 Other operating systems will require adjustments to these instructions.
 
-Set up DNS from a domain name that you own to point to the server. We will use
-`testnet1.edgewa.re`. (You don't need to do this if you are setting up a private node.)
+If you are running a public node, set up DNS from a domain name that
+you own to point to the server. We will use `testnet1.edgewa.re`.
+(You don't need to do this if you are setting up a private node.)
 
 SSH into the server.
 
