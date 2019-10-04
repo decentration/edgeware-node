@@ -13,8 +13,8 @@ If you are running a private node, you will only need to follow
 Provision an appropriately sized server from one of the recommended VPS
 providers.
 
-We recommend 2GB or 4GB of RAM and assume you are using Ubuntu 18.04 x64.
-Other versions or operating systems will require adjustments to these instructions.
+We recommend a node with at least 2GB of RAM, and Ubuntu 18.04 x64.
+Other operating systems will require adjustments to these instructions.
 
 Set up DNS from a domain name that you own to point to the server. We will use
 `testnet1.edgewa.re`. (You don't need to do this if you are setting up a private node.)
@@ -88,7 +88,7 @@ You should see the node connecting to the network and syncing the latest blocks.
 If you need to tail the latest output, you can use:
 
 ```
-journalctl -u edgeware.service
+journalctl -u edgeware.service -f
 ```
 
 ## 2. Configuring an SSL certificate (public nodes only)
