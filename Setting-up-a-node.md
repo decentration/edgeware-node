@@ -232,11 +232,31 @@ WebSockets connection:
 curl --include --no-buffer --header "Connection: Upgrade" --header "Upgrade: websocket" --header "Host: $name:80" --header "Origin: http://$name:80" --header "Sec-WebSocket-Key: SGVsbG8sIHdvcmxkIQ==" --header "Sec-WebSocket-Version: 13" http://$name:9944/
 ```
 
-### 4. Next steps
+## 4. Connecting to your node
 
-Congratulations on your new node! Try connecting to it using [polkadot-js/apps](https://polkadot.js.org/apps/#/settings):
+Congratulations on your new node! If you set up public DNS and a SSL
+certificate in steps 2 and 3, you should be able to connect to it now
+from [polkadot-js/apps](https://polkadot.js.org/apps/#/settings):
 
 ![](https://user-images.githubusercontent.com/1273926/66156368-631b3400-e5d6-11e9-8254-33040f87ee4f.png)
+
+Otherwise, you should be able to use
+[edgeware-cli](https://github.com/hicommonwealth/edgeware-cli) to
+connect to it:
+
+```
+git clone https://github.com/hicommonwealth/edgeware-cli.git
+cd edgeware-cli
+yarn
+bin/edge -r ws://testnet1.edgewa.re:9944 balances freeBalance 5G8jA2TLTQqnofx2jCE1MAtaZNqnJf1ujv7LdZBv2LGznJE2
+```
+
+In general, you should use these URLs to connect to your node:
+
+* `ws://testnet1.edgewa.re:9944` if you set it up as a public node in step 1
+* `wss://testnet1.edgewa.re` if you set up DNS, Nginx, and a Let's Encrypt certificate
+
+## 5. Next steps
 
 Your node will automatically restart when the system reboots, but it may not
 be able to recover from other failures. To handle those, consider following
