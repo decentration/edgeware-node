@@ -6,11 +6,9 @@ Edgeware is a self-improving, actively governed smart contract blockchain built 
 
 ### [[Setting up monitoring]]
 
-### [[Validating on Edgeware (UI)]] - validating using https://polkadot.js.org/apps
+### [[Validating on Edgeware (UI)]] - how to validate using https://polkadot.js.org/apps
 
-### [[Validating on Edgeware (CLI)]] - validating using the command line
-
-### [[Validating on Edgeware (Genesis validators)]]
+### [[Validating on Edgeware (CLI)]] - how to validate using the command line
 
 ### [[Developing on Edgeware]]
 
