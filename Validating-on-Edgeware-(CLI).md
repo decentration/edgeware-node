@@ -1,6 +1,6 @@
 Welcome to the official, in-depth Edgeware guide to validating. We're happy that you're interested in validating on Edgeware and we'll do our best to provide in-depth documentation on the process below. As always, reach out on [Discord](https://discord.gg/CJRfb3) or [Telegram](https://t.me/heyedgeware) if you have questions about the project.
 
-This document contains all the information one should need to start validating on Edgeware. We will start with how to setup one's node and proceed to how to key management and monitoring. To start, we will use the following terminology of keys for the guide:
+This document contains all the information one should need to start validating on Edgeware using the **command line interface**. We will start with how to setup one's node and proceed to how to key management and monitoring. To start, we will use the following terminology of keys for the guide:
 
 - ***stash*** - the stash keypair is where your funds should be located
 - ***controller*** - the controller is the keypair that will control your validator settings
