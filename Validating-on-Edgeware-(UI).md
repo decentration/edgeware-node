@@ -52,7 +52,7 @@ Sec-WebSocket-Accept: qGEgH3En71di5rrssAZTmtRTyFk=
 Upgrade: websocket
 ```
 
-**Check the [telemetry dashboard](https://github.com/hicommonwealth/edgeware-node/wiki), and make sure your node is syncing up to the latest block.**
+**Check the [telemetry dashboard](https://github.com/hicommonwealth/edgeware-node/wiki), and make sure your node is syncing up to the latest block.** If any of these steps do not check out, stop now; you will not be able to validate until they are corrected.
 
 ### 2. Connect via the interface
 
