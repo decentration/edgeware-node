@@ -2,14 +2,17 @@ If you are running a validator or a public node, you should set up system
 monitoring in order to improve your awareness of how your node is performing,
 and reduce the likelihood that it goes offline.
 
-This tutorial explains how to set up monit and mmonit.
+This tutorial explains how to set up monit and mmonit, so that your node
+will automatically get restarted if its CPU usage indicates it has stalled,
+or the API has stopped responding.
 
-* Monit is a process monitoring tool, which can restart your node if it stalls
+* Monit is a process monitoring tool, which can restart your node if it stalls,
+ send notifications by email, etc.
 * Mmonit is a dashboard that shows the performance (CPU, memory, alerts, etc.)
  of monit nodes.
 
-You do not need to set up both. If you don't need a dashboard, you can skip
-directly to the section for setting up `monit` on an individual node.
+(If you don't need a dashboard, you can skip directly to the section for setting
+up `monit` on an individual node.)
 
 The tutorial assumes you are running Ubuntu 18.04.
 
@@ -118,6 +121,10 @@ export TARGET=[domain]
 monit reload
 monit validate
 ```
+
+Refer to the [monit documentation](https://mmonit.com/monit/documentation/monit.html)
+if you would like to set up email alerts or other additional checks
+on your node.
 
 ## Monitoring API health
 
