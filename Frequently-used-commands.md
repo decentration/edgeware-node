@@ -1,8 +1,14 @@
 ## Running a node
 
-To start up the Edgeware node and connect to testnet 0.9.0, run: `./target/release/edgeware --chain=chains/testnet-0.9.0.json --name <INSERT_NAME>`
+To start up the Edgeware node and connect to testnet 0.9.0, run:
+```
+./target/release/edgeware --chain=chains/testnet-0.9.0.json --name <INSERT_NAME>
+```
 
-To run a chain locally for development purposes: `./target/release/edgeware --chain=local --alice --validator`
+To run a chain locally for development purposes:
+```
+./target/release/edgeware --chain=local --alice --validator
+```
 
 To allow apps in your browser to connect, as well as anyone else on your local network, add the `--rpc-cors=all` flag.
 
