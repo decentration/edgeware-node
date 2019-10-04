@@ -73,10 +73,10 @@ configuration file:
 } > /etc/systemd/system/edgeware.service
 ```
 
-**Note: This will create an Edgeware server that accepts all incoming
-connections. This is risky and insecure if you keep any keys on the server.
-If you would like to create a private node instead, you should remove the
-`ws-external` and `rpc-cors` flags.**
+**Note: This will create an Edgeware server that accepts incoming connections
+from anyone on the internet. If you are using the node as a validator, you
+should instead remove the `ws-external` flag, so Edgeware does not accept
+outside connections.**
 
 Double check that the config has been written to `/etc/systemd/system/edgeware.service`
 correctly. If so, enable the service so it runs on startup, and then try to
