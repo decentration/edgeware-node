@@ -8,8 +8,6 @@ Quick links:
 
 #### [[Validating on Edgeware (CLI)]]
 
-#### [[Validating on Edgeware (Genesis validators)]]
-
 #### [[Developing on Edgeware]]
 
 #### [[Frequently used commands]]
