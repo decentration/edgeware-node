@@ -1,4 +1,4 @@
-This guide covers how to set up an Edgeware node. There are two ways you can set up a node:
+This guide covers how to set up an Edgeware node. There are two ways you can proceed:
 
 - Setting up a private node, e.g. if you would like to run a validator
 - Setting up a public node, e.g. if you want to run connect services or dapps to Edgeware
