@@ -13,7 +13,7 @@ up `monit` on an individual node.)
 
 The tutorial assumes you are running Ubuntu 18.04.
 
-## Setting up an `mmonit` dashboard
+## Setting up an `mmonit` monitoring server
 
 For the monitoring server, a small server should be enough (e.g. 1GB memory).
 The default setup will use SQLite as a database. This means if you remove
