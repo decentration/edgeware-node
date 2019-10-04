@@ -1,8 +1,4 @@
-A Parity Substrate node implementing [Edgeware](https://edgewa.re).
-
-### [Telemetry](https://telemetry.polkadot.io/#/Edgeware%20Testnet)
-
-### [Block Explorer](https://polkascan.io/pre/edgeware-testnet/dashboard)
+Edgeware is a self-improving, actively governed smart contract blockchain built on Parity Substrate.
 
 ## DevOps Guides
 
@@ -14,3 +10,10 @@ A Parity Substrate node implementing [Edgeware](https://edgewa.re).
 
 ### [[Developing on Edgeware]]
 
+## Resources
+
+### [[Frequently used commands]]
+
+### [Telemetry](https://telemetry.polkadot.io/#/Edgeware%20Testnet)
+
+### [Block Explorer](https://polkascan.io/pre/edgeware-testnet/dashboard)
