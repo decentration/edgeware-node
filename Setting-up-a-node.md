@@ -264,8 +264,8 @@ bin/edge -r ws://testnet1.edgewa.re:9944 balances freeBalance 5G8jA2TLTQqnofx2jC
 
 In general, you should use these URLs to connect to your node:
 
-* `ws://testnet1.edgewa.re:9944` if you set it up as a public node in step 1
-* `wss://testnet1.edgewa.re` if you set up DNS, Nginx, and a Let's Encrypt certificate
+* `ws://testnet1.edgewa.re:9944` if you set it up as a public node with `--ws-external` in step 1
+* `wss://testnet1.edgewa.re` if you set it up as a public node and also followed steps 2 and 3
 
 ## 5. Next steps
 
