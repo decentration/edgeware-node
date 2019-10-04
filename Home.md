@@ -1,6 +1,6 @@
 A Parity Substrate node implementing [Edgeware](https://edgewa.re).
 
-### [Telemetry](https://telemetry.polkadot.io/#/Edgeware Testnet)
+### [Telemetry](https://telemetry.polkadot.io/#/Edgeware%20Testnet)
 
 ### [Block Explorer](https://polkascan.io/pre/edgeware-testnet/dashboard)
 
