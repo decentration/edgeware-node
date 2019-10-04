@@ -4,7 +4,11 @@ Quick links:
 
 #### [[Setting up monitoring]]
 
-#### [[Validating on Edgeware]]
+#### [[Validating on Edgeware (UI)]]
+
+#### [[Validating on Edgeware (CLI)]]
+
+#### [[Validating on Edgeware (Genesis validators)]]
 
 #### [[Developing on Edgeware]]
 
