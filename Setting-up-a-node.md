@@ -4,9 +4,9 @@ This guide covers how to set up an Edgeware node. There are two ways you can pro
 - Setting up a public node, e.g. if you want to run connect services or dapps to Edgeware
 
 If you are running a private node, you will only need to follow
-**steps 0 and 1** of this guide. If you are running a public node,
-we will guide you through setting up an SSL certificate, so any
-browser can securely connect to your node. (Most people only need to set up
+**steps 0 and 1** of this guide. Otherwise, we will guide you through setting
+up an SSL certificate in **steps 2 and 3**, so any browser can securely
+connect to your node. (Most people, including validators, only need to set up
 a private node.)
 
 ## 0. Provisioning a server
