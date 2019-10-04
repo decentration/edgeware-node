@@ -1,12 +1,22 @@
-This tutorial explains how to set up monit and mmonit, which are respectively
-a process monitoring tool and a dashboard for managing a fleet of monit nodes.
+If you are running a validator or a public node, you should set up system
+monitoring in order to improve your awareness of how your node is performing,
+and reduce the likelihood that it goes offline.
 
-The tutorial assumes you are running Ubuntu 18.04
+This tutorial explains how to set up monit and mmonit.
 
-## Setting up an `mmonit` dashboard server
+* Monit is a process monitoring tool, which can restart your node if it stalls
+* Mmonit is a dashboard that shows the performance (CPU, memory, alerts, etc.)
+ of monit nodes.
+
+You do not need to set up both. If you don't need a dashboard, you can skip
+directly to the section for setting up `monit` on an individual node.
+
+The tutorial assumes you are running Ubuntu 18.04.
+
+## Setting up an `mmonit` dashboard
 
 For the monitoring server, a small server should be enough (e.g. 1GB memory).
-The default setup will use SQLite as a database. Beware that if you remove
+The default setup will use SQLite as a database. This means if you remove
 the monit directory, all logged events will be lost!
 
 ```
@@ -41,7 +51,7 @@ username and password.
 You should end up with two users; admin is what you'll use to log in, and the
 other user is what you'll provide to nodes that push data to the monitoring server.
 
-## Adding individual nodes
+## Setting up `monit` on an individual node
 
 SSH into your node.
 
@@ -73,10 +83,9 @@ chmod 755 /root/slack_notify.sh
 Set up a Monit config to check the Edgeware service at 10-second intervals,
 restart if CPU > 90% for five checks (~50sec), and post events to mmonit.
 
-You should first provide a username and password. They should be the same
-as you have set for mmonit above, and they will be used BOTH to push data
-to mmonit, AND to allow other hosts to inspect the status of this node
-directly.
+If you are using mmonit, include the username and password you have set
+for mmonit above. Otherwise, you should remove the sections that use the
+username and password below:
 
 ```
 export USER=edgeware
@@ -110,30 +119,42 @@ monit reload
 monit validate
 ```
 
-Note that connections on port 2812 are restricted to localhost.
+## Monitoring API health
 
-## Bonus: Monitoring API connectivity
+So far, monit will only check to ensure that the node does not remain
+at 100% CPU for extended periods of time. We can now add another
+check that uses the API to ensure the node is accepting connections
+and syncing properly.
 
-If your node has an open WebSockets API, you can add a script that
-directly checks the health of the node, and ensures blocks are syncing.
 This will catch some failure scenarios where the node appears to keep
 operating but stops recognizing new blocks. We provide `nodeup`
 for this purpose.
 
-To accept WebSockets API connections, add `--rpc-cors="*"` to the node
-configuration. By default, this will not make the node accept connections
-from outside hosts (`--ws-external` is required for that).
-
-Clone [nodeup](https://github.com/hicommonwealth/nodeup.git) into
+Clone [nodeup](https://github.com/hicommonwealth/nodeup) into
 the `/root` directory. Follow its installation instructions:
 
 ```
+git clone https://github.com/hicommonwealth/nodeup.git
+cd nodeup
 apt install -y nodejs npm
 npm install -g yarn
 yarn
 ```
 
-Add these lines to `/etc/monit/monitrc`:
+Make sure your node is running with the `--rpc-cors="*"` flag, so
+WebSocket connections are accepted. Note that by default, this will not
+make the node accept connections from outside the local machine
+(`--ws-external` is required for that).
+
+Test nodeup:
+
+```
+node index.js
+```
+
+If it is working, you can now add these lines to your monit configuration
+at `/etc/monit/monitrc` (they assume that nodeup is installed in the
+`/root/nodeup` directory, adjust accordingly if not):
 
 ```
 check program nodeup with path "/root/nodeup/index.js"
