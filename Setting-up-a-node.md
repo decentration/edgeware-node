@@ -1,17 +1,27 @@
 This guide covers how to set up an Edgeware node.
 
-It roughly covers two cases:
+There are two ways you can set up a node:
 
 - Setting up a private node, e.g. if you would like to run a validator
 - Setting up a public node, e.g. if you want to run connect services or dapps to Edgeware
 
 If you are running a private node, you will only need to follow
-**steps 0 and 1** of this guide.
+**steps 0 and 1** of this guide. If you are running a public node,
+we will guide you through setting up an SSL certificate, so any
+browser can securely connect to your node. (Most people only need to set up
+a private node.)
 
 ## 0. Provisioning a server
 
-Provision an appropriately sized server from one of the recommended VPS
-providers.
+Provision an appropriately sized server from a reputable VPS provider, e.g.:
+
+- [Vultr](https://www.vultr.com)
+- [DigitalOcean](https://www.digitalocean.com)
+- [Linode](https://www.linode.com)
+- [OVH](https://www.ovh.com.au)
+- [Contabo](https://contabo.com)
+- [Scaleway](https://www.scaleway.com/en/)
+- Amazon AWS, etc.
 
 We recommend a node with at least 2GB of RAM, and Ubuntu 18.04 x64.
 Other operating systems will require adjustments to these instructions.
