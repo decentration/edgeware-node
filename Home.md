@@ -6,12 +6,11 @@ A Parity Substrate node implementing [Edgeware](https://edgewa.re).
 
 ## DevOps Guides
 
-### [[Getting started]]
-
 ### [[Setting up a node]]
 
 ### [[Setting up monitoring]]
 
 ### [[Validating on Edgeware]]
 
+### [[Developing on Edgeware]]
 
