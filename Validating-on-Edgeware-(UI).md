@@ -56,10 +56,49 @@ Upgrade: websocket
 
 ### 2. Connect via the interface
 
+Go to the [polkadot-js web interface](https://polkadot.js.org/apps/#/settings) and connect to a custom node, e.g. testnet1.edgewa.re, testnet2.edgewa.re, or testnet3.edgewa.re.
+
+The interface should show the correct latest block.
+
 ### 3. Create a stake
+
+Go to the **Staking** tab, and select **Account actions** at the top. Click on **New stake**.
+
+Select your controller and stash accounts. You will also be able to choose where your validator rewards are deposited, e.g. to the stash or the controller.
+
+Sign and send the transaction.
 
 ### 4. Set your session keys, using `rotateKeys`
 
+Click on **Set Session Keys** on the stake you just created above.
+
+Go to the command line where your validator is running (e.g. SSH into the server, etc.) and enter this command. It will tell your validator to generate a new set of session keys:
+
+```
+curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id":1 }' localhost:9933
+```
+
+The output should look like this:
+
+```
+{"jsonrpc":"2.0","result":"0x0ca0fbf245e4abca3328f8bba4a286d6cb1796516fcc68864cab580f175e6abd2b9107003014fc6baab7fd8caf4607b34222df62f606248a8a592bcba86ff9eec6e838ae8eb757eb77dffc748f1443e60c4f7617c9ea7905f0dd09ab758a8063","id":1}
+```
+
+Copy the hexadecimal key from inside the JSON object, and paste it into the web interface.
+
+Sign and send the transaction. This registers your intent to validate.
+
 ### 5. Start validating
 
+You should now be able to see your validator in the **Next up** section of the staking tab.
+
+At the beginning of the next **era**, if there are open slots and your validator has adequate
+stake behind it, your validator should join the set of active validators and automatically start
+producing blocks.
+
+(On the testnet, sessions are 100 blocks or 10 minutes long, and eras are 300 blocks or 30 minutes long.)
+
 ### 6. Receiving rewards and slashing
+
+Your validator will publish an `im_online` heartbeat when each session begins. This prevents it from being slashed for unavailability.
+
