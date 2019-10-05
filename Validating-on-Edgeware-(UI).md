@@ -64,6 +64,7 @@ Go to the **Staking** tab, and select **Account actions** at the top. Click on *
 
 Select your controller and stash accounts. Enter how much of your stash balance you would like
 to stake. Leave a few EDG free, or you will be unable to send transactions from the account.
+
 You can also choose where your validator rewards are deposited (to the stash or the controller)
 and whether rewarded EDG should be automatically re-staked.
 
