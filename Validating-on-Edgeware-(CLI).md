@@ -2,9 +2,9 @@ Welcome to the official, in-depth Edgeware guide to validating. We're happy that
 
 This document contains all the information one should need to start validating on Edgeware using the **command line interface**. We will start with how to setup one's node and proceed to how to key management and monitoring. To start, we will use the following terminology of keys for the guide:
 
-- ***stash*** - the stash keypair is where your funds should be located
-- ***controller*** - the controller is the keypair that will control your validator settings
-- ***session*** - the 3 session keypairs will be responsible for validating, authoring, and finalizing blocks.
+- ***stash*** - the stash keypair is where most of your funds should be located. It can be kept in cold storage if necessary.
+- ***controller*** - the controller is the keypair that will control your validator settings. It should have a smaller balance, e.g. 10-100 EDG
+- ***session*** - the 3 session keypairs are hot keys that are stored on your validator node. They do not need to have balances.
 
 ## Requirements
 1. You will need 5 keypairs: a `stash` (ed25519 or sr25519), `controller` (ed25519 or sr25519), and 3 `session` (only ed25519) keypairs. You can generate these using the `subkey` utility. We will be using derived keys in the examples, if you do not use derived keys, simply input the seed/mnemonic needed to sign from these accounts.
