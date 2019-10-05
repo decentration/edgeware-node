@@ -9,18 +9,16 @@ This document contains all the information one should need to start validating o
 ## Requirements
 
 1. You should have balances in your `stash` (ed25519 or sr25519) and `controller` (ed25519 or sr25519) accounts.
-2.  Instructions for setting up a node are [here](https://github.com/hicommonwealth/edgeware-node/wiki/Setting-up-a-Node) and you will need to 
+2.  Instructions for setting up a node are [here](https://github.com/hicommonwealth/edgeware-node/wiki/Setting-up-a-Node). You will need to additionally add the `--validator` flag to run a validator node.
 3. You should have a wallet, such as the `polkadot-js` extension, installed in your browser with the stash and controller keypairs. If you don't have it, get it [here](https://github.com/polkadot-js/extension).
 
-If you need to request a testnet EDG balance, ask on [Discord](1).
+If you need to request a testnet EDG balance, just ask on [Discord](1).
 
 ### 1. Install the Edgeware node
 
-Set up a live, fully-synced Edgeware node running with the `--validator` flag.
-
 If you are starting a validator node that needs to stay up, we recommend [following the default instructions](https://github.com/hicommonwealth/edgeware-node/wiki/Setting-up-a-Node) and [setting up monitoring](https://github.com/hicommonwealth/edgeware-node/wiki/Setting-up-monitoring). 
 
-Then, you should go to the line where the edgeware executable is called in `/etc/systemd/system/edgeware.service`, and add the `--validator` flag. Reload the service configuration and check to see the node has started properly:
+Then, you should go to the line where `target/release/edgeware` is called in `/etc/systemd/system/edgeware.service`, and add the `--validator` flag. Reload the service configuration and check to see the node has started properly:
 
 ```
 systemctl daemon-reload
@@ -64,13 +62,20 @@ The interface should show the correct latest block.
 
 Go to the **Staking** tab, and select **Account actions** at the top. Click on **New stake**.
 
-Select your controller and stash accounts. You will also be able to choose where your validator rewards are deposited, e.g. to the stash or the controller.
+Select your controller and stash accounts. Enter how much of your stash balance you would like
+to stake. Leave a few EDG free, or you will be unable to send transactions from the account.
+You can also choose where your validator rewards are deposited (to the stash or the controller)
+and whether rewarded EDG should be automatically re-staked.
+
+![Enter stake amount](https://user-images.githubusercontent.com/1273926/66247046-d5227480-e6cd-11e9-9ddf-45af83a102d4.png)
 
 Sign and send the transaction.
 
 ### 4. Set your session keys, using `rotateKeys`
 
 Click on **Set Session Keys** on the stake you just created above.
+
+![Set session keys](https://user-images.githubusercontent.com/1273926/66247139-b5d81700-e6ce-11e9-9948-85ddd6a4865c.png)
 
 Go to the command line where your validator is running (e.g. SSH into the server, etc.) and enter this command. It will tell your validator to generate a new set of session keys:
 
@@ -84,15 +89,33 @@ The output should look like this:
 {"jsonrpc":"2.0","result":"0x0ca0fbf245e4abca3328f8bba4a286d6cb1796516fcc68864cab580f175e6abd2b9107003014fc6baab7fd8caf4607b34222df62f606248a8a592bcba86ff9eec6e838ae8eb757eb77dffc748f1443e60c4f7617c9ea7905f0dd09ab758a8063","id":1}
 ```
 
+![rotateKeys output](https://user-images.githubusercontent.com/1273926/66247146-bf617f00-e6ce-11e9-9531-8d212443a642.png)
+
 Copy the hexadecimal key from inside the JSON object, and paste it into the web interface.
 
-Sign and send the transaction. This registers your intent to validate.
+![rotateKeys input](https://user-images.githubusercontent.com/1273926/66247154-ca1c1400-e6ce-11e9-9a50-11b9a6734867.png)
+
+Sign and send the transaction.
 
 ### 5. Start validating
 
+You should now see a **Validate** button on the stake.
+
+![Validate or nominate](https://user-images.githubusercontent.com/1273926/66247159-cf795e80-e6ce-11e9-888b-63f870c301e9.png)
+
+Click on it, and enter the commission you would like to charge as a validator. Sign and send the transaction.
+
+![Set commission](https://user-images.githubusercontent.com/1273926/66247167-d3a57c00-e6ce-11e9-8d34-b3a0195e6533.png)
+
 You should now be able to see your validator in the **Next up** section of the staking tab.
 
+![Next up](https://user-images.githubusercontent.com/1273926/66247178-def8a780-e6ce-11e9-81a3-3bdc26b2e5af.png)
+
 At the beginning of the next **era**, if there are open slots and your validator has adequate stake supporting it, your validator will join the set of active validators and automatically start producing blocks. (On the testnet, sessions are 100 blocks or 10 minutes long, and eras are 300 blocks or 30 minutes long.)
+
+Active validators receive rewards at the end of each era. Slashing also happens at the end of each era.:
+
+![Reward](https://user-images.githubusercontent.com/1273926/66247183-e455f200-e6ce-11e9-93ba-5eee38b7c606.png)
 
 Is your validator not producing blocks?
 
@@ -102,6 +125,10 @@ Is your validator not producing blocks?
 
 ### 6. Stop validating
 
-If you would like to stop validating, you should send a `chill` transaction from the staking page. This will take effect when the next validator rotation happens.
+If you would like to stop validating, you should use the **Stop Validating** button on your stake, to send a `chill` transaction. It will take effect when the next validator rotation happens, at which point you can shut down your validator.
 
-Once you have stopped validating, you can send a transaction to free your funds. This will require waiting for one full unbonding period.
+Once you have stopped validating, you can send a transaction to unbond your funds. You can then **redeem** your unbonded funds after the unbonding period has passed.
+
+![Unbond](https://user-images.githubusercontent.com/1273926/66247294-ee2c2500-e6cf-11e9-93a1-89e9fa532367.png)
+
+![Redeem unbonded funds](https://user-images.githubusercontent.com/1273926/66247295-eec4bb80-e6cf-11e9-96a8-92ecbdc932d1.png)
