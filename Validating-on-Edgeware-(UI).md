@@ -92,13 +92,16 @@ Sign and send the transaction. This registers your intent to validate.
 
 You should now be able to see your validator in the **Next up** section of the staking tab.
 
-At the beginning of the next **era**, if there are open slots and your validator has adequate
-stake behind it, your validator should join the set of active validators and automatically start
-producing blocks.
+At the beginning of the next **era**, if there are open slots and your validator has adequate stake supporting it, your validator will join the set of active validators and automatically start producing blocks. (On the testnet, sessions are 100 blocks or 10 minutes long, and eras are 300 blocks or 30 minutes long.)
 
-(On the testnet, sessions are 100 blocks or 10 minutes long, and eras are 300 blocks or 30 minutes long.)
+Is your validator not producing blocks?
 
-### 6. Receiving rewards and slashing
+- Check that it is part of the active validator set. You will need to wait until your validator rotates in; this may take longer depending on whether there are free slots.
+- Check that it is running with the `--validator` flag.
+- Ensure your session keys are set correctly. Use `curl` to rotate your session keys again, and then send another transaction to the network to set the new keys.
 
-Your validator will publish an `im_online` heartbeat when each session begins. This prevents it from being slashed for unavailability.
+### 6. Stop validating
 
+If you would like to stop validating, you should send a `chill` transaction from the staking page. This will take effect when the next validator rotation happens.
+
+Once you have stopped validating, you can send a transaction to free your funds. This will require waiting for one full unbonding period.
