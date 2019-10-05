@@ -75,8 +75,6 @@ Sign and send the transaction.
 
 Click on **Set Session Keys** on the stake you just created above.
 
-![Set session keys](https://user-images.githubusercontent.com/1273926/66247139-b5d81700-e6ce-11e9-9948-85ddd6a4865c.png)
-
 Go to the command line where your validator is running (e.g. SSH into the server, etc.) and enter this command. It will tell your validator to generate a new set of session keys:
 
 ```
@@ -103,11 +101,7 @@ You should now see a **Validate** button on the stake.
 
 Click on it, and enter the commission you would like to charge as a validator. Sign and send the transaction.
 
-![Set commission](https://user-images.githubusercontent.com/1273926/66247167-d3a57c00-e6ce-11e9-8d34-b3a0195e6533.png)
-
 You should now be able to see your validator in the **Next up** section of the staking tab.
-
-![Next up](https://user-images.githubusercontent.com/1273926/66247178-def8a780-e6ce-11e9-81a3-3bdc26b2e5af.png)
 
 At the beginning of the next **era**, if there are open slots and your validator has adequate stake supporting it, your validator will join the set of active validators and automatically start producing blocks. (On the testnet, sessions are 100 blocks or 10 minutes long, and eras are 300 blocks or 30 minutes long.)
 
