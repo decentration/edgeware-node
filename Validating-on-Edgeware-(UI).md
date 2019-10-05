@@ -96,11 +96,9 @@ Sign and send the transaction.
 
 ### 5. Start validating
 
-You should now see a **Validate** button on the stake.
-
 ![Validate or nominate](https://user-images.githubusercontent.com/1273926/66247159-cf795e80-e6ce-11e9-888b-63f870c301e9.png)
 
-Click on it, and enter the commission you would like to charge as a validator. Sign and send the transaction.
+You should now see a **Validate** button on the stake. Click on it, and enter the commission you would like to charge as a validator. Sign and send the transaction.
 
 You should now be able to see your validator in the **Next up** section of the staking tab.
 
