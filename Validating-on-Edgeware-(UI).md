@@ -89,8 +89,6 @@ The output should look like this:
 {"jsonrpc":"2.0","result":"0x0ca0fbf245e4abca3328f8bba4a286d6cb1796516fcc68864cab580f175e6abd2b9107003014fc6baab7fd8caf4607b34222df62f606248a8a592bcba86ff9eec6e838ae8eb757eb77dffc748f1443e60c4f7617c9ea7905f0dd09ab758a8063","id":1}
 ```
 
-![rotateKeys output](https://user-images.githubusercontent.com/1273926/66247146-bf617f00-e6ce-11e9-9531-8d212443a642.png)
-
 Copy the hexadecimal key from inside the JSON object, and paste it into the web interface.
 
 ![rotateKeys input](https://user-images.githubusercontent.com/1273926/66247154-ca1c1400-e6ce-11e9-9a50-11b9a6734867.png)
