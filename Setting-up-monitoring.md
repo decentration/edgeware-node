@@ -1,8 +1,8 @@
 If you are running a validator or a public node, you should set up system
-monitoring in order to improve your awareness of how your node is performing,
-and reduce the likelihood that it goes offline.
+monitoring to be aware if your node goes offline, and restart it automatically
+if possible.
 
-This tutorial explains how to set up **monit** and **mmonit**:
+This tutorial explains how to set up **monit** and **mmonit** to accomplish this:
 
 * Monit is a process monitoring tool, which can restart your node if it stalls.
 * Mmonit is a dashboard that shows the performance (CPU, memory, alerts, etc.)
