@@ -249,17 +249,6 @@ from [polkadot-js/apps](https://polkadot.js.org/apps/#/settings):
 
 ![](https://user-images.githubusercontent.com/1273926/66156368-631b3400-e5d6-11e9-8254-33040f87ee4f.png)
 
-Otherwise, you should be able to use
-[edgeware-cli](https://github.com/hicommonwealth/edgeware-cli) to
-connect to it:
-
-```
-git clone https://github.com/hicommonwealth/edgeware-cli.git
-cd edgeware-cli
-yarn
-bin/edge -r ws://testnet1.edgewa.re:9944 balances freeBalance 5G8jA2TLTQqnofx2jCE1MAtaZNqnJf1ujv7LdZBv2LGznJE2
-```
-
 In general, you should use these URLs to connect to your node:
 
 * `ws://testnet1.edgewa.re:9944` if you set it up as a public node with `--ws-external` in step 1
