@@ -6,8 +6,6 @@ Quick links:
 
 #### [[Validating on Edgeware (UI)]]
 
-#### [[Validating on Edgeware (CLI)]]
-
 #### [[Developing on Edgeware]]
 
 #### [[Frequently used commands]]
