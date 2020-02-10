@@ -6,6 +6,14 @@ This document contains all the information one should need to start validating o
 - ***controller*** - the controller is the keypair that will control your validator settings. It should have a smaller balance, e.g. 10-100 EDG
 - ***session*** - the 4 session keypairs are hot keys that are stored on your validator node. They do not need to have balances.
 
+The four session keys are defined as follows:
+- Aura ED25519 key
+- Grandpa ED25519 key
+- ImOnline ED25519 key
+- AuthorityDiscovery SR25519 key
+
+By running the `rotate_keys` rpc command instructed below, your node should generate these for you.
+
 ## Requirements
 
 1. You should have balances in your `stash` (ed25519 or sr25519) and `controller` (ed25519 or sr25519) accounts.
