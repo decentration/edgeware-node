@@ -4,7 +4,7 @@ This document contains all the information one should need to start validating o
 
 - ***stash*** - the stash keypair is where most of your funds should be located. It can be kept in cold storage if necessary.
 - ***controller*** - the controller is the keypair that will control your validator settings. It should have a smaller balance, e.g. 10-100 EDG
-- ***session*** - the 3 session keypairs are hot keys that are stored on your validator node. They do not need to have balances.
+- ***session*** - the 4 session keypairs are hot keys that are stored on your validator node. They do not need to have balances.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ systemctl restart edgeware
 systemctl status edgeware
 ```
 
-You should see this output:
+You should see something like this output:
 
 ```
 2019-10-03 10:28:59 Edgeware
@@ -85,7 +85,7 @@ curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"au
 The output should look like this:
 
 ```
-{"jsonrpc":"2.0","result":"0x0ca0fbf245e4abca3328f8bba4a286d6cb1796516fcc68864cab580f175e6abd2b9107003014fc6baab7fd8caf4607b34222df62f606248a8a592bcba86ff9eec6e838ae8eb757eb77dffc748f1443e60c4f7617c9ea7905f0dd09ab758a8063","id":1}
+{"jsonrpc":"2.0","result":"0x691f58da618271c071d44ba8085915a5bdbd480942b1f0951ae9f2c7ee0870f726d3a76899c877474f25be468a54facfd6a7f644eba8af13d9b14aaae8d9d3c6c5d6140fdd8958f633b8d71087548d7338be047055115c8121ceee87e93b428edaa261ad18a5f1ac988741eef86becdb14ff2f982cac6248028748b05bedcf18","id":1}
 ```
 
 Copy the hexadecimal key from inside the JSON object, and paste it into the web interface.
