@@ -25,7 +25,7 @@ We recommend a node with at least 2GB of RAM, and Ubuntu 18.04 x64.
 Other operating systems will require adjustments to these instructions.
 
 If you are running a public node, set up DNS from a domain name that
-you own to point to the server. We will use `testnet1.edgewa.re`.
+you own to point to the server. We will use `testnet1.edgewa.re` as an example.
 (You don't need to do this if you are setting up a private node.)
 
 SSH into the server.
@@ -128,8 +128,7 @@ you will need to stop it, by running e.g. `service nginx stop`, for
 this to work.
 
 Certbot will ask you some questions, start its own web server, and
-talk to Let's Encrypt to issue a certificate. In the end, you should
-see output that looks like this:
+talk to Let's Encrypt to issue a certificate. Be sure to add add a domain name with A records containing the right IP address. In the end, you should see output that looks like this:
 
 ```
 root:~/edgeware-node# certbot certonly --standalone
